@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    width: 100vw;
+    height: 15vh;
+    padding-left: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header span {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-left: 128px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    margin-right: 200px;
+}
+
+.search h2 {
+    margin-right: 5px;
+}

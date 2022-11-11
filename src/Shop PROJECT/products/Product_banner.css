@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.products-container {
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(63, 78, 79);
+}
+
+
+.product-banner {
+    z-index: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+    padding-top: 2%;
+}
