@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.Players {
+.countryDetails {
     height: 100%;
 
     display: flex;
@@ -14,7 +14,7 @@
     margin-left: 12px;
 }
 
-.playersImg {
+.counrtyImg {
     width: 5rem;
     height: 5rem;
 
@@ -26,6 +26,7 @@
 
     border: solid 1.7px black;
 
+    cursor: pointer;
 }
 
 .country-name {
@@ -37,6 +38,6 @@
     font-weight: normal;
 }
 
-.scoer-div {
+.continents {
     color: rgba(0, 0, 0, 0.564);
 }
