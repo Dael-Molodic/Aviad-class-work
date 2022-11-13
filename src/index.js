@@ -7,7 +7,7 @@ import AppCountries from './Countries/AppCountries';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
-  // <App /> // switch to see shop
-  <AppCountries /> // switch to see countries
+  <App /> // switch to see shop
+  // <AppCountries /> // switch to see countries
 
 );
