@@ -11,4 +11,4 @@ You can switch between the Shop and the Country projects.
 - go to **index.js** in the **src file** and switch project as you wish. 
 
 **It will look like this:**
-![Code example]("./WhatsApp Image 2022-11-13 at 08.41.17.jpeg")
+![Code example](https://miro.medium.com/max/1400/1*jiesx_z8gVwLp6PIe9ZKRQ.png)
