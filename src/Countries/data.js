@@ -51849,12 +51849,12 @@ const dataArr = [
     }
 ]
 
-const data = {};
+// const data = {};
 
-for (let i of dataArr) {
-    let countryName = i.name.common;
-    data[countryName] = i;
-}
+// for (let i of dataArr) {
+//     let countryName = i.name.common;
+//     data[countryName] = i;
+// }
 
 dataArr.sort((a, b) => {
     const nameA = a.name.common.toUpperCase();
