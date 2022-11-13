@@ -1,10 +1,10 @@
-### hello everyone!
+# hello everyone!
 
 ## Switch Project
 
 You can switch between the Shop and the Country projects.
 
-# Instructions:
+### Instructions:
 - Copy this *github* link > [Dael Projects](https://github.com/Dael-Molodic/Aviad-class-work.git) 
 - Open a new file on your computer.
 - Do the *Git Clone* **github link** command on this new file that you just opened.
