@@ -6,7 +6,7 @@ export default function Header(props) {
     return <div className="header">
 
         <div>
-            <h1>Countries (<span>{props.countriesNum}</span>)</h1> 
+            <h1>Countries (<span>{props.searchCountries?.length}</span>)</h1> 
         </div>
         <div className="search">
             <h2>Search:</h2>

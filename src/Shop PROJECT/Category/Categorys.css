@@ -26,6 +26,12 @@
     cursor: pointer;
 }
 
+.category-button.all-product {
+    height: 48%;
+    width: 11%;
+    font-weight: bold;
+}
+
 .category-button:hover {
     background: rgb(183, 133, 92);
 }

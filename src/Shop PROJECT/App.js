@@ -2,45 +2,43 @@ import CategoryBanner from "./Category/Category_banner";
 import ProductBanner from "./products/Product_banner";
 import "./App.css";
 import { useEffect, useState } from "react";
-import products from "./products/product";
+import starageManager from "./main function/storageManager";
+import { cartArr, allProducts } from "./products/product";
 
 
 
 export default function App() {
 
-  const [currentProducts, setCategory] = useState(products);
-  const [cartProducts ,setCartArr] = useState([]);
-  const [cartCounter, setCartCounter] = useState(0);
+  const [displayedProducts, setDisplayedProducts] = useState(allProducts);
+  const [cartArrLength ,setCartArrLength] = useState(0);
 
 
-  const filter = (query) => {
-    query ? setCategory(products.filter(v => v.category == query)) : setCategory(products);
+  const filterProduct = (filterQuery) => {
+    filterQuery 
+    ? setDisplayedProducts(allProducts.filter(v => v.category == filterQuery))
+    : setDisplayedProducts(allProducts);
   }
 
-  const addToCart = (uniqueName) => {
+  const addToCart = (productName) => {
 
-    let mainProductObj = (currentProducts.find(v => v.title == uniqueName));
+    let mainProductObj = (displayedProducts.find(v => v.title == productName));
     let productToCart = Object.assign({}, mainProductObj);
-    productToCart.storage = 1;
     
-    if ( !(cartProducts.find(v => v.title == productToCart.title)) ) {
+    if ( cartArr.find(v => v.title == productToCart.title)) return;
+    cartArr.push(productToCart);
 
-      setCartArr(prevcartProducts => [...prevcartProducts, productToCart]);
-      mainProductObj.storage--;
-
-    }
+    setCartArrLength(prevcartProducts => prevcartProducts + 1);
+    
+    starageManager("fromStorageToCart", productName);
 
   }
 
-  useEffect(() => {
-    setCartCounter(cartProducts.length)
-  }, [cartProducts.length])
-  
 
-  return ( <div>
-    <CategoryBanner filter = {filter} cartCounter = {cartCounter} />
-    <ProductBanner addToCart = {addToCart} currentProducts = {currentProducts} />
-  </div>
+  return ( 
+    <div>
+      <CategoryBanner filterProduct = {filterProduct} cartArrLength = {cartArrLength} />
+      <ProductBanner addToCart = {addToCart} displayedProducts = {displayedProducts} />
+    </div>
   );
 
 }

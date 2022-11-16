@@ -8,7 +8,6 @@ import "./AppCountries.css";
 export default function AppCountries() {
 
     const [searchCountries, setSearch] = useState(dataArr);
-    const [countriesNum, setCountriesNum] = useState( 250);
 
     const filterCountries = (TxtToSearch) => {
 
@@ -20,13 +19,9 @@ export default function AppCountries() {
 
     }
 
-    useEffect(() => {
-        setCountriesNum(searchCountries.length);
-    }, [searchCountries.length])
-
     return <>
 
-        <Header filterCountries = {filterCountries} countriesNum = {countriesNum}/>
+        <Header searchCountries = {searchCountries} filterCountries = {filterCountries} />
         <Main searchCountries = {searchCountries}/>
         
     </>

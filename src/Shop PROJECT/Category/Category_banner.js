@@ -1,4 +1,4 @@
-import mainProductArr from "../products/product";
+import { allProducts } from "../products/product";
 import Category from "./Category";
 import "./Categorys.css";
  
@@ -6,23 +6,24 @@ import "./Categorys.css";
  
 function CategoryBanner(props) {
  
-    let category = mainProductArr.map(v => v.category).filter((v,i,arr) => i === arr.indexOf(v))
+    let category = Array.from(new Set(allProducts.map(v => v.category)));
     
-    return <div className="category-banner">
+    return (
+        <div className="category-banner">
 
-        <div className="category-button" style={{height: "48%", width: "11%", fontWeight: "bold"}} onClick={() => props.filter()}>All product</div>
-        {/* <span> | </span> */}
+            <div className="category-button all-product" onClick={() => props.filterProduct()}>All product</div>
 
-        { category.map(v => {
-            return <Category name = {v} filter = {props.filter}/>
-        }) }
+            { category.map(v => {
+                return <Category name = {v} filterProduct = {props.filterProduct} key = {v}/>
+            }) }
 
-        <div className="main-cart-shadow">
-            <img src="https://cdn-icons-png.flaticon.com/512/3081/3081840.png" alt="cart" className="main-cart"></img>
-            <div className="cart-item-count">{props.cartCounter}</div>
+            <div className="main-cart-shadow">
+                <img src="https://cdn-icons-png.flaticon.com/512/3081/3081840.png" alt="cart" className="main-cart"></img>
+                <div className="cart-item-count">{props.cartArrLength}</div>
+            </div>
+
         </div>
-
-    </div>
+    )
    
 }
 
