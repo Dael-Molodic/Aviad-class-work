@@ -2,7 +2,7 @@ import CategoryBanner from "./Category/Category_banner";
 import ProductBanner from "./products/Product_banner";
 import "./App.css";
 import { useEffect, useState } from "react";
-import starageManager from "./main function/storageManager";
+import storageManager from "./main function/storageManager";
 import { cartArr, allProducts } from "./products/product";
 
 
@@ -29,7 +29,7 @@ export default function App() {
 
     setCartArrLength(prevcartProducts => prevcartProducts + 1);
     
-    starageManager("fromStorageToCart", productName);
+    storageManager("fromStorageToCart", productName);
 
   }
 
@@ -38,6 +38,7 @@ export default function App() {
     <div>
       <CategoryBanner filterProduct = {filterProduct} cartArrLength = {cartArrLength} />
       <ProductBanner addToCart = {addToCart} displayedProducts = {displayedProducts} />
+      <CartPopup />
     </div>
   );
 
